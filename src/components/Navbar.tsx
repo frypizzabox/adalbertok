@@ -1,11 +1,6 @@
 import { useState } from 'react'
-
-const links = [
-  { label: 'Home', href: '#home' },
-  { label: 'About', href: '#about' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Contact', href: '#contact' },
-]
+import { navLinks } from '../data/navigation'
+import { personal } from '../data/personal'
 
 export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -14,12 +9,12 @@ export function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-soul-dark/80 backdrop-blur-md border-b border-soul-ash">
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         <a href="#home" className="font-pixel text-soul-ember text-xs hover:text-soul-flame transition-colors">
-          AK
+          {personal.shortName}
         </a>
 
         {/* Desktop links */}
         <div className="hidden md:flex gap-8">
-          {links.map((link) => (
+          {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
@@ -49,7 +44,7 @@ export function Navbar() {
       {/* Mobile menu */}
       {menuOpen && (
         <div className="md:hidden bg-soul-darker border-t border-soul-ash px-6 py-4 flex flex-col gap-4">
-          {links.map((link) => (
+          {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}

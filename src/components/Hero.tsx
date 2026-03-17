@@ -1,4 +1,5 @@
 import { BonfireCanvas } from './BonfireCanvas'
+import { personal } from '../data/personal'
 
 export function Hero() {
   return (
@@ -8,10 +9,10 @@ export function Hero() {
       {/* Overlay text */}
       <div className="absolute inset-0 flex flex-col items-center justify-center z-10 pointer-events-none">
         <h1 className="font-pixel text-soul-ember text-lg md:text-2xl mb-4 drop-shadow-lg">
-          Adalberto Kutuxidis
+          {personal.name}
         </h1>
         <p className="font-mono text-soul-flame text-sm md:text-base opacity-80">
-          Developer &middot; Creator &middot; Pixel Enthusiast
+          {personal.tagline}
         </p>
       </div>
 
