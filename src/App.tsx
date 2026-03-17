@@ -1,12 +1,15 @@
 import { Navbar } from './components/Navbar'
 import { Hero } from './components/Hero'
+import { About } from './components/About'
 
 function App() {
   return (
     <>
       <Navbar />
       <Hero />
-      {/* About */}
+      <div className="bg-soul-dark">
+        <About />
+      </div>
       {/* Projects */}
       {/* Contact */}
       {/* Footer */}
