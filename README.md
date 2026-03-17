@@ -1,6 +1,6 @@
 # adalbertok
 
-Personal portfolio website for Adalberto Kutuxidis — a Dark Souls-inspired pixel art site with an animated Canvas 2D bonfire scene, built with a lean stack and zero animation libraries.
+Personal portfolio website for Adalberto Kutuxidis — a Dark Souls-inspired pixel art website with an animated Canvas 2D bonfire scene, built with a lean stack and zero animation libraries.
 
 ## Tech Stack
 
