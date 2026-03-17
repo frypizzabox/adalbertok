@@ -1,9 +1,9 @@
 import { ScrollReveal } from './ScrollReveal'
 
 const socials = [
-  { label: 'GitHub', href: 'https://github.com/', icon: '>' },
-  { label: 'LinkedIn', href: 'https://linkedin.com/', icon: '>' },
-  { label: 'Email', href: 'mailto:hello@example.com', icon: '>' },
+  { label: 'GitHub', href: 'https://github.com/frypizzabox', icon: '>' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/adalbertokutuxidis', icon: '>' },
+  { label: 'Email', href: 'mailto:adalberto.kutuxidis@gmail.com', icon: '>' },
 ]
 
 export function Contact() {
