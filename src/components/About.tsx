@@ -1,38 +1,6 @@
 import { ScrollReveal } from './ScrollReveal'
-
-const webSkills = [
-  'JavaScript', 'TypeScript', 'HTML5', 'CSS3',
-  'React', 'React Native', 'Redux', 'MobX', 'Electron', 'Angular',
-  'Node.js', 'Express', 'Sequelize', 'TypeORM',
-  'Kafka', 'AWS', 'GCP',
-  'MySQL', 'PostgreSQL', 'MongoDB', 'Redis',
-  'Docker', 'Kubernetes', 'Terraform',
-  'Datadog', 'Mixpanel', 'Splunk', 'Sentry', 'Snowplow',
-  'Git', 'SVN', 'Perforce',
-]
-
-const gameSkills = [
-  'C#', 'GDScript', 'GML', 'Python', 'GoLang', 'PHP',
-  'Unity3D', 'Unreal Engine', 'Godot', 'GameMaker',
-]
-
-const webExperience = [
-  { company: 'Epidemic Sound', role: 'Software Engineer III', period: '2025–now', detail: 'Fullstack for Team Retain — experiments, retention strategies, internal migration' },
-  { company: 'Digital Route', role: 'Senior Software Engineer', period: '2021–2024', detail: 'Cloud Edition — frontend, backend, monitoring. Scrum Master. On-call team' },
-  { company: 'Klarna', role: 'Senior Software Engineer', period: '2019–2021', detail: 'Wishlist/Collections — lead developer, iOS widget task force. On-call team' },
-  { company: 'Symbio / Volvo', role: 'Senior Software Developer', period: '2017–2018', detail: 'Tech consulting & mobile/web solutions for Volvo' },
-  { company: 'Samsung Electronics', role: 'Software Engineer', period: '2013–2017', detail: 'Global projects — Android/Tizen ports, led teams in Brazil, traveled to South Korea' },
-  { company: 'ZoomOut Soluções Digitais', role: 'Owner / Software Engineer', period: '2011–2013', detail: 'Founded studio — websites & web admin systems' },
-  { company: 'Vekttor', role: 'Software Engineer', period: '2010–2011', detail: 'Websites & web admin systems' },
-  { company: 'Hexagono STI', role: 'Software Engineer', period: '2009–2010', detail: 'Frontend for mobile & web applications' },
-  { company: 'AKBS', role: 'Owner / Software Engineer', period: '2006–2008', detail: 'Founded studio — websites & web admin systems' },
-]
-
-const gameExperience = [
-  { company: 'Embark Studios', role: 'Senior Fullstack Developer', period: '2024–2025', detail: 'Built internal tools for The Finals — shipped the Clubs feature (Season 5)' },
-  { company: 'Paradox Interactive', role: 'Experienced Software Developer', period: '2019', detail: 'Worked on the Paradox Launcher' },
-  { company: 'Samsung Electronics', role: 'Software Engineer', period: '2013–2017', detail: 'GearVR prototypes with Unity3D' },
-]
+import { personal } from '../data/personal'
+import { bio, webSkills, gameSkills, webExperience, gameExperience } from '../data/about'
 
 export function About() {
   return (
@@ -45,25 +13,16 @@ export function About() {
 
       <ScrollReveal delay={100}>
         <p className="font-body text-soul-white text-lg leading-relaxed mb-4 max-w-2xl">
-          I'm Adalberto Kutuxidis — a veteran adventurer with 15+ years of
-          questing through codebases. I've crossed oceans from the Amazon
-          jungles of Manaus, Brazil, to the frozen lands of Stockholm, Sweden,
-          leveling up my skills at every bonfire along the way.
+          {bio[0]}
         </p>
         <p className="font-body text-soul-gray text-base leading-relaxed mb-4 max-w-2xl">
-          My main quest line? Full Stack Development — slaying bugs and
-          crafting pixel-perfect interfaces with JavaScript, TypeScript, and
-          React. But every hero has a side quest: mine is game development,
-          where I wield Unity3D, Godot, and Unreal Engine.
+          {bio[1]}
         </p>
         <p className="font-body text-soul-gray text-base leading-relaxed mb-8 max-w-2xl">
-          I've joined guilds like Klarna, Samsung, Embark Studios, and Epidemic
-          Sound — shipping loot used by millions. Whether it's a global-scale
-          web app or an internal tool for a AAA game, I bring the same focus:
-          clean code, high quality, and a relentless drive to ship.
+          {bio[2]}
         </p>
         <a
-          href="/CV_Adalberto.pdf"
+          href={personal.cvPath}
           download
           className="inline-block font-mono text-sm px-4 py-2 text-soul-ember pixel-border ember-glow transition-all hover:text-soul-flame"
         >
