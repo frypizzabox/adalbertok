@@ -183,6 +183,18 @@ export function BonfireCanvas() {
     ctx.fillStyle = glow
     ctx.fillRect(fireX - glowRadius, fireY - glowRadius, glowRadius * 2, glowRadius * 2)
 
+    // Stone base under bonfire
+    ctx.fillStyle = '#2a2a2a'
+    ctx.fillRect(fireX - 18, fireY + 6, 36, 4)
+    ctx.fillStyle = '#333333'
+    ctx.fillRect(fireX - 14, fireY + 4, 28, 4)
+    ctx.fillStyle = '#252525'
+    ctx.fillRect(fireX - 20, fireY + 10, 40, groundY - (fireY + 10))
+    // Stone highlights
+    ctx.fillStyle = '#3a3a3a'
+    ctx.fillRect(fireX - 16, fireY + 10, 8, 2)
+    ctx.fillRect(fireX + 6, fireY + 12, 6, 2)
+
     // Bonfire logs
     ctx.fillStyle = '#3a2010'
     ctx.fillRect(fireX - 12, fireY + 2, 24, 6)
