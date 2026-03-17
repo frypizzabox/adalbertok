@@ -20,6 +20,34 @@ interface Ember {
 const STAR_COUNT = 80
 const EMBER_COUNT = 25
 
+// Trees defined as fixed proportional data: [xPercent, trunkH, trunkW, canopyW, canopyLayers, shade]
+// xPercent is 0-1 across canvas width. shade 0=bright, 1=dark.
+// Sorted outer-to-inner so closer trees paint on top (painter's algorithm).
+const TREES: [number, number, number, number, number, number][] = [
+  // Far left
+  [0.02, 70, 8,  36, 8, 0.95],
+  [0.07, 55, 6,  28, 7, 0.9],
+  [0.12, 80, 10, 40, 9, 0.85],
+  [0.17, 45, 6,  22, 6, 0.8],
+  [0.22, 65, 8,  32, 7, 0.75],
+  [0.28, 50, 6,  26, 6, 0.7],
+  [0.33, 75, 8,  34, 8, 0.6],
+  [0.38, 40, 6,  20, 5, 0.5],
+  // Near left (close to clearing)
+  [0.42, 55, 6,  24, 6, 0.4],
+  // Near right (close to clearing)
+  [0.58, 50, 6,  22, 6, 0.4],
+  // Far right
+  [0.62, 60, 8,  30, 7, 0.5],
+  [0.67, 75, 8,  34, 8, 0.6],
+  [0.72, 42, 6,  20, 5, 0.7],
+  [0.78, 68, 8,  32, 7, 0.75],
+  [0.83, 50, 6,  26, 6, 0.8],
+  [0.88, 80, 10, 40, 9, 0.85],
+  [0.93, 55, 6,  28, 7, 0.9],
+  [0.98, 65, 8,  34, 8, 0.95],
+]
+
 // Pixel hero sprite (sitting by bonfire) — each row is a series of color codes
 // 0=transparent, 1=dark gray (armor), 2=light gray (highlights), 3=skin, 4=brown (cape), 5=soul-ember (eye visor)
 const HERO_SPRITE = [
@@ -117,6 +145,33 @@ export function BonfireCanvas() {
       const gx = Math.floor((Math.sin(i * 73.7) * 0.5 + 0.5) * w)
       const gy = Math.floor(h * 0.85 + (Math.sin(i * 37.3) * 0.5 + 0.5) * h * 0.14)
       ctx.fillRect(gx, gy, 4, 2)
+    }
+
+    // Trees (fixed positions, scaled to canvas)
+    const groundY = Math.floor(h * 0.85)
+    for (const [xPct, trunkH, trunkW, canopyW, canopyLayers, shade] of TREES) {
+      const tx = Math.floor(xPct * w)
+      const r = Math.floor(10 * (1 - shade))
+      const g = Math.floor(18 * (1 - shade))
+      const b = Math.floor(12 * (1 - shade))
+
+      // Trunk
+      ctx.fillStyle = `rgb(${20 + r}, ${14 + g}, ${8 + b})`
+      ctx.fillRect(tx - Math.floor(trunkW / 2), groundY - trunkH, trunkW, trunkH)
+
+      // Canopy — stacked pixel layers narrowing upward
+      const canopyBaseY = groundY - trunkH
+      for (let l = 0; l < canopyLayers; l++) {
+        const progress = l / canopyLayers
+        const layerW = Math.floor(canopyW * (1 - progress * 0.8))
+        const lx = tx - Math.floor(layerW / 2)
+        const ly = canopyBaseY - l * 4
+        const gr = Math.floor(20 + 15 * (1 - shade))
+        const gg = Math.floor(35 + 25 * (1 - shade) - progress * 10)
+        const gb = Math.floor(15 + 10 * (1 - shade))
+        ctx.fillStyle = `rgb(${gr}, ${gg}, ${gb})`
+        ctx.fillRect(lx, ly, layerW, 4)
+      }
     }
 
     // Fire glow (radial gradient)
