@@ -14,18 +14,4 @@ export const projects: Project[] = [
     link: '/',
     github: 'https://github.com/frypizzabox/adalbertok',
   },
-  {
-    title: 'Project Two',
-    description: 'Another project showcase. Describe what it does and why it matters.',
-    tags: ['Node.js', 'Express', 'PostgreSQL'],
-    link: '#',
-    github: '#',
-  },
-  {
-    title: 'Project Three',
-    description: 'One more project to round out the grid. Add as many as you like.',
-    tags: ['Python', 'FastAPI', 'Docker'],
-    link: '#',
-    github: '#',
-  },
 ]
