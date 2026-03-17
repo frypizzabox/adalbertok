@@ -1,10 +1,5 @@
 import { ScrollReveal } from './ScrollReveal'
-
-const socials = [
-  { label: 'GitHub', href: 'https://github.com/frypizzabox', icon: '>' },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/adalbertokutuxidis', icon: '>' },
-  { label: 'Email', href: 'mailto:adalberto.kutuxidis@gmail.com', icon: '>' },
-]
+import { socials, contactPrompt, contactFlavor } from '../data/contact'
 
 export function Contact() {
   return (
@@ -14,13 +9,13 @@ export function Contact() {
           Contact
         </h2>
         <p className="font-mono text-soul-flame text-sm mb-10 opacity-70">
-          Rest at the bonfire. Leave a message.
+          {contactFlavor}
         </p>
       </ScrollReveal>
 
       <ScrollReveal delay={100}>
         <div className="bg-soul-darker pixel-border p-6 font-mono text-sm max-w-md mx-auto">
-          <p className="text-soul-gray mb-4">$ connect --with adalberto</p>
+          <p className="text-soul-gray mb-4">{contactPrompt}</p>
           {socials.map((s) => (
             <a
               key={s.label}
