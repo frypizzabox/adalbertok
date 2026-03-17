@@ -16,7 +16,7 @@ export function Hero() {
       </div>
 
       {/* Scroll hint */}
-      <a href="#about" className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 cursor-pointer">
+      <a href="#about" className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 cursor-pointer p-6 flex items-center justify-center">
         <div className="w-4 h-4 border-b-2 border-r-2 border-soul-ember rotate-45 animate-bounce opacity-60" />
       </a>
     </section>
