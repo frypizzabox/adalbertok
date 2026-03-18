@@ -159,19 +159,22 @@ export function BonfireCanvas() {
       ctx.fillStyle = `rgb(${20 + r}, ${14 + g}, ${8 + b})`
       ctx.fillRect(tx - Math.floor(trunkW / 2), groundY - trunkH, trunkW, trunkH)
 
-      // Canopy — stacked pixel layers narrowing upward
+      // Canopy — blocky rectangular shape
+      const canopyTotalH = canopyLayers * 4
       const canopyBaseY = groundY - trunkH
-      for (let l = 0; l < canopyLayers; l++) {
-        const progress = l / canopyLayers
-        const layerW = Math.floor(canopyW * (1 - progress * 0.8))
-        const lx = tx - Math.floor(layerW / 2)
-        const ly = canopyBaseY - l * 4
-        const gr = Math.floor(20 + 15 * (1 - shade))
-        const gg = Math.floor(35 + 25 * (1 - shade) - progress * 10)
-        const gb = Math.floor(15 + 10 * (1 - shade))
-        ctx.fillStyle = `rgb(${gr}, ${gg}, ${gb})`
-        ctx.fillRect(lx, ly, layerW, 4)
-      }
+      const cx = tx - Math.floor(canopyW / 2)
+      const cy = canopyBaseY - canopyTotalH
+
+      // Main canopy block
+      const gr = Math.floor(20 + 15 * (1 - shade))
+      const gg = Math.floor(35 + 25 * (1 - shade))
+      const gb = Math.floor(15 + 10 * (1 - shade))
+      ctx.fillStyle = `rgb(${gr}, ${gg}, ${gb})`
+      ctx.fillRect(cx, cy, canopyW, canopyTotalH)
+
+      // Darker bottom half for depth
+      ctx.fillStyle = `rgb(${Math.max(gr - 6, 0)}, ${Math.max(gg - 8, 0)}, ${Math.max(gb - 4, 0)})`
+      ctx.fillRect(cx, cy + Math.floor(canopyTotalH / 2), canopyW, Math.floor(canopyTotalH / 2))
     }
 
     // Fire glow (radial gradient)
