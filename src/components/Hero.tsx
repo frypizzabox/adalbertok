@@ -1,9 +1,19 @@
+import { useEffect, useRef } from 'react'
 import { BonfireCanvas } from './BonfireCanvas'
 import { personal } from '../data/personal'
 
 export function Hero() {
+  const sectionRef = useRef<HTMLElement>(null)
+
+  useEffect(() => {
+    const isMobile = 'ontouchstart' in window || navigator.maxTouchPoints > 0
+    if (isMobile && sectionRef.current) {
+      sectionRef.current.style.height = `${window.innerHeight}px`
+    }
+  }, [])
+
   return (
-    <section id="home" className="relative w-full h-svh overflow-hidden">
+    <section ref={sectionRef} id="home" className="relative w-full h-svh overflow-hidden">
       <BonfireCanvas />
 
       {/* Overlay text */}
