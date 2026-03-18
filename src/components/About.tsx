@@ -11,7 +11,7 @@ export function About() {
         </h2>
       </ScrollReveal>
 
-      <ScrollReveal delay={100}>
+      <ScrollReveal>
         <p className="font-body text-soul-white text-lg leading-relaxed mb-4 max-w-2xl">
           {bio[0]}
         </p>
@@ -31,7 +31,7 @@ export function About() {
       </ScrollReveal>
 
       {/* Web Experience */}
-      <ScrollReveal delay={200}>
+      <ScrollReveal delay={50}>
         <h3 className="font-pixel text-soul-flame text-xs mt-16 mb-6">Web Experience</h3>
         <div className="space-y-4 mb-12">
           {webExperience.map((h) => (
@@ -48,7 +48,7 @@ export function About() {
       </ScrollReveal>
 
       {/* Game Experience */}
-      <ScrollReveal delay={300}>
+      <ScrollReveal delay={100}>
         <h3 className="font-pixel text-soul-flame text-xs mb-6">Game Experience</h3>
         <div className="space-y-4 mb-12">
           {gameExperience.map((h) => (
@@ -65,7 +65,7 @@ export function About() {
       </ScrollReveal>
 
       {/* Web Skills */}
-      <ScrollReveal delay={400}>
+      <ScrollReveal delay={50}>
         <h3 className="font-pixel text-soul-flame text-xs mb-6">Web Skills</h3>
         <div className="flex flex-wrap gap-3 mb-12">
           {webSkills.map((skill) => (
@@ -80,7 +80,7 @@ export function About() {
       </ScrollReveal>
 
       {/* Game Skills */}
-      <ScrollReveal delay={500}>
+      <ScrollReveal delay={100}>
         <h3 className="font-pixel text-soul-flame text-xs mb-6">Game Skills</h3>
         <div className="flex flex-wrap gap-3">
           {gameSkills.map((skill) => (
