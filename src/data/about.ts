@@ -8,7 +8,7 @@ export interface ExperienceEntry {
 export const bio = [
   "I'm Adalberto Kutuxidis — a veteran adventurer with 15+ years of questing through codebases. I've crossed oceans from the Amazon jungles of Manaus, Brazil, to the frozen lands of Stockholm, Sweden, leveling up my skills at every bonfire along the way.",
   'My main quest line? Full Stack Development — slaying bugs and crafting pixel-perfect interfaces with JavaScript, TypeScript, and React. But every hero has a side quest: mine is game development, where I wield Unity3D, Godot, and Unreal Engine.',
-  "I've joined guilds like Klarna, Samsung, Embark Studios, and Epidemic Sound — shipping loot used by millions. Whether it's a global-scale web app or an internal tool for a AAA game, I bring the same focus: clean code, high quality, and an unbreakable vow to never ship on a Friday. And remember — don't you dare go hollow!",
+  "I've joined guilds like Klarna, Samsung, Digital Route, and Epidemic Sound — shipping loot used by millions. Whether it's a global-scale web app or an internal tool for a AAA game, I bring the same focus: clean code, high quality, and an unbreakable vow to never ship on a Friday. And remember — don't you dare go hollow!",
 ]
 
 export const webSkills = [
