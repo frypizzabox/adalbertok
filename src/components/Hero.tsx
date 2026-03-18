@@ -3,7 +3,7 @@ import { personal } from '../data/personal'
 
 export function Hero() {
   return (
-    <section id="home" className="relative w-full h-screen overflow-hidden">
+    <section id="home" className="relative w-full h-svh overflow-hidden">
       <BonfireCanvas />
 
       {/* Overlay text */}
