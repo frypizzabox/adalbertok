@@ -20,36 +20,27 @@ export function useCanvasAnimation(
       animId = requestAnimationFrame(loop)
     }
 
-    let resizeTimer: ReturnType<typeof setTimeout>
-    let lastWidth = 0
+    const isMobile = 'ontouchstart' in window || navigator.maxTouchPoints > 0
 
     const resize = () => {
-      const newWidth = canvas.offsetWidth
-      const newHeight = canvas.offsetHeight
-
-      // Skip height-only changes (mobile browser chrome show/hide)
-      if (lastWidth === newWidth && canvas.width === newWidth) return
-
-      lastWidth = newWidth
-      canvas.width = newWidth
-      canvas.height = newHeight
+      canvas.width = canvas.offsetWidth
+      canvas.height = canvas.offsetHeight
       ctx.imageSmoothingEnabled = false
     }
 
-    const debouncedResize = () => {
-      clearTimeout(resizeTimer)
-      resizeTimer = setTimeout(resize, 150)
-    }
-
-    const observer = new ResizeObserver(debouncedResize)
-    observer.observe(canvas)
     resize()
+
+    let observer: ResizeObserver | null = null
+    if (!isMobile) {
+      observer = new ResizeObserver(resize)
+      observer.observe(canvas)
+    }
 
     animId = requestAnimationFrame(loop)
 
     return () => {
       cancelAnimationFrame(animId)
-      observer.disconnect()
+      observer?.disconnect()
     }
   }, [draw])
 }
