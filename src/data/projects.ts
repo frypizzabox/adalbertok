@@ -18,6 +18,7 @@ export const projects: Project[] = [
     title: 'Scrapeteer',
     description: 'A declarative web scraping library for Node.js powered by Puppeteer. Define CSS selectors, specify attributes to extract, and get structured data back.',
     tags: ['TypeScript', 'Node.js', 'Puppeteer'],
+    link: 'https://www.npmjs.com/package/scrapeteer',
     github: 'https://github.com/frypizzabox/Scrapeteer',
   },
 ]
