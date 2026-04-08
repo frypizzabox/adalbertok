@@ -16,7 +16,7 @@ describe('About', () => {
   it('renders the CV download link', () => {
     render(<About />)
     const link = screen.getByText('[ Download CV ]')
-    expect(link).toHaveAttribute('href', '/CV_Adalberto.pdf')
+    expect(link).toHaveAttribute('href', '/Adalberto_CV_2026.pdf')
     expect(link).toHaveAttribute('download')
   })
 
