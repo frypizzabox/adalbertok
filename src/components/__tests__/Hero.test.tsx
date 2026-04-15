@@ -15,7 +15,7 @@ describe('Hero', () => {
 
   it('renders the tagline', () => {
     render(<Hero />)
-    expect(screen.getByText(/Developer/)).toBeInTheDocument()
+    expect(screen.getByText(/Senior Frontend Engineer/)).toBeInTheDocument()
   })
 
   it('renders the bonfire canvas', () => {
