@@ -14,7 +14,7 @@ export function ScrollReveal({ children, className = '', delay = 0 }: ScrollReve
   return (
     <div
       ref={ref}
-      className={`${isVisible ? 'scroll-visible' : 'scroll-hidden'} ${className}`}
+      className={`${isVisible ? 'scroll-visible' : 'scroll-hidden'} h-full ${className}`}
       style={{ transitionDelay: `${delay}ms` }}
     >
       {children}

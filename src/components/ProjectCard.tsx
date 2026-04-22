@@ -6,7 +6,7 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <div className="bg-soul-darker p-6 pixel-border hover:scale-[1.02] transition-transform ember-glow">
+    <div className="bg-soul-darker p-6 pixel-border hover:scale-[1.02] transition-transform ember-glow h-full flex flex-col">
       <h3 className="font-pixel text-soul-ember text-xs mb-3">
         {project.title}
       </h3>
@@ -23,7 +23,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           </span>
         ))}
       </div>
-      <div className="flex gap-4">
+      <div className="flex gap-4 mt-auto">
         {project.link && (
           <a
             href={project.link}
