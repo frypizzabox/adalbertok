@@ -21,6 +21,12 @@ export const projects: Project[] = [
     github: 'https://github.com/frypizzabox/sidescan',
   },
   {
+    title: 'RLAB',
+    description: 'A small stat-less roguelike card prototype built in Godot — deckbuilder meets dungeon-crawler with pixel art slot frames and cursed items. Playable on itch.io with free Windows and macOS builds. Access password: adalber.to',
+    tags: ['Godot', 'GDScript', 'Roguelike', 'Pixel art'],
+    link: 'https://frypizzabox.itch.io/rlab',
+  },
+  {
     title: 'Scrapeteer',
     description: 'A declarative web scraping library for Node.js powered by Puppeteer. Define CSS selectors, specify attributes to extract, and get structured data back.',
     tags: ['TypeScript', 'Node.js', 'Puppeteer'],
